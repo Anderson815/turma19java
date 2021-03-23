@@ -30,6 +30,11 @@ programa
 		
 		faca{
 			opcao = tela1()
+			/*
+			se(opcao == "1"){
+				
+			}
+			*/
 			tela2(opcao)
 		}enquanto(opcao != "5")
 	}
@@ -58,7 +63,8 @@ programa
 			}
 			
 		}enquanto(opcao != "1" e opcao != "2" e opcao != "3" e opcao != "4" e opcao != "5")
-		
+
+		limpa()
 		retorne opcao
 	}
 
@@ -176,7 +182,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 3833; 
+ * @POSICAO-CURSOR = 512; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
