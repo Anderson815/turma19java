@@ -93,22 +93,9 @@ programa
 	
 			se(continuar == "S" ou continuar == "s"){
 				se(movimento == "D" ou movimento == "d"){
-					se(valorMovimento > saldo){
-						escreva("ERRO: você informou um valor de debito acima do valor do seu saldo")
-						Util.aguarde(3000)					
-					}senao se(valorMovimento < 0){
-						escreva("ERRO: você informou um valor de debito negativo")
-						Util.aguarde(3000)						
-					}senao{
-						saldo = debito(saldo, valorMovimento)
-					}
+					saldo = debito(valorMovimento)
 				}senao se(movimento == "C" ou movimento == "c"){
-					se(valorMovimento < 0){
-						escreva("ERRO: você informou um valor de crédito negativo")
-						Util.aguarde(3000)						
-					}senao{
-						saldo = credito(saldo, valorMovimento)
-					}				
+					saldo = credito(valorMovimento)
 				}senao{
 					escreva("ERRO: você não informou o tipo da movimentação (D ou C)")
 					Util.aguarde(3000)				
@@ -121,6 +108,7 @@ programa
 				escreva("ERRO: você não informou se iria continuar ou não")
 				Util.aguarde(3000)
 			}
+			limpa()
 		}enquanto(continuar == "S" ou continuar == "s")		
 	}
 
@@ -131,15 +119,32 @@ programa
 	}
 
 	//Funções de Calculo
-	funcao real debito(real saldo, real valor){
-		real novoSaldo = 0.00
-		novoSaldo = saldo - valor
+	funcao real debito(real valor){
+		real novoSaldo = saldo
+
+		se(valor > saldo){
+			escreva("ERRO: você informou um valor de debito acima do valor do seu saldo")
+			Util.aguarde(3000)					
+		}senao se(valor < 0){
+			escreva("ERRO: você informou um valor de debito negativo")
+			Util.aguarde(3000)						
+		}senao{
+			novoSaldo = saldo - valor
+		}
+			
 		retorne novoSaldo
 	}
 
-	funcao real credito(real saldo, real valor){
-		real novoSaldo = 0.00
-		novoSaldo = saldo + valor
+	funcao real credito(real valor){
+		real novoSaldo = saldo
+
+		se(valor < 0){
+			escreva("ERRO: você informou um valor de crédito negativo")
+			Util.aguarde(3000)						
+		}senao{
+			novoSaldo = saldo + valor
+		}
+			
 		retorne novoSaldo		
 	}
 
@@ -182,7 +187,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 512; 
+ * @POSICAO-CURSOR = 2224; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
