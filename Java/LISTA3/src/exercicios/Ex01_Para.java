@@ -3,9 +3,7 @@ package exercicios;
 import java.util.Scanner;
 
 public class Ex01_Para {
-	
-	public static final int habitantes = 4;
-	
+		
 	public static void main(String[] args) {
 	
 //		A prefeitura de uma cidade fez uma pesquisa entre 20 de seus habitantes,
@@ -17,13 +15,15 @@ public class Ex01_Para {
 		
 		Scanner leia = new Scanner(System.in);
 		
+		final int habitantes = 4;
+		
 		//Input
 		double salario = 0.0;
 		int filhos = 0;
 		
 		//Dados
 		double mediaSalario = 0.0;
-		int mediaFilhos = 0;
+		double mediaFilhos = 0.00;
 		double maiorSalario = 0.0;
 		double porcentagemAte100 = 0.0;
 		
@@ -50,8 +50,8 @@ public class Ex01_Para {
 			System.out.println("");
 		}
 		
-		mediaSalario = totalSalario / habitantes;
-		mediaFilhos = (int) (totalFilhos / habitantes);
+		mediaSalario = totalSalario / (double) habitantes;
+		mediaFilhos = totalFilhos / (double) habitantes;
 		porcentagemAte100 = (totalPorcentagemAte100 / habitantes) * 100;
 		
 		System.out.println("----- RESULTADO DA PESQUISA -----");
