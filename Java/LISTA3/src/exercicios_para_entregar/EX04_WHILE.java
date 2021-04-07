@@ -27,19 +27,40 @@ public class EX04_WHILE {
 		
 		int idade = 0;
 		String sexo = "";
-		String personalidade = "";
+		String opcao = "";
 		
-		while(pessoa <= limitePessoas && idade >= 0) {
-			System.out.print("Informe a idade: ");
-			idade = leia.nextInt();
+		int[][] matriz = new int[3][3];
+		
+		System.out.print("Informe a idade: ");
+		idade = leia.nextInt();
+		
+		while(pessoa <= limitePessoas && idade > 0) {
 			
-			System.out.print("Informe o sexo [1 - Feminino | 2 - Masculino | 3 - Outros] : ");
-			sexo = leia.next();
+			if(pessoa > 1) {
+				System.out.print("Informe a idade: ");
+				idade = leia.nextInt();
+			}
 			
-			System.out.print("Informe a personalidade [1 - Calma | 2 - Nervosa | 3 - Agressiva] : ");
-			personalidade = leia.next();
-			
-			pessoa++;
+			if(idade > 0) {
+				System.out.print("Informe o sexo [1 - Feminino | 2 - Masculino | 3 - Outros] : ");
+				sexo = leia.next();
+				
+				System.out.print("Informe a opcao [1 - Calma | 2 - Nervosa | 3 - Agressiva] : ");
+				opcao = leia.next();
+				
+				System.out.println();
+				
+				matriz[Integer.parseInt(sexo) - 1][Integer.parseInt(opcao) -1]++;
+				
+				pessoa++;
+			}
 		}
+		
+		System.out.println();
+		
+		
+		
+		System.out.println();
+		System.out.println("FIM DE PROGRAMA");
 	}
 }
