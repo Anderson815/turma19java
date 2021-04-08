@@ -1,4 +1,4 @@
-package ex01;
+package ex01_e_ex02;
 
 public class Animal {
 	
