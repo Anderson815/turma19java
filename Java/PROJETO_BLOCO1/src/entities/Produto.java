@@ -1,9 +1,9 @@
-package entidades;
+package entities;
 
 public abstract class Produto {
 	
 	private String descricao;
-	private String codigo;
+	private int codigo;
 	private double valorUnitario;
 	private int qtdeEstoque; 
 	 
@@ -18,12 +18,12 @@ public abstract class Produto {
 	}
 	
 	//Métodos Especiais
-	public Produto(String descricao, String codigo, double valorUnitario) {	
+	public Produto(String descricao, int codigo, double valorUnitario) {	
 		super();
 		this.descricao = descricao;
 		this.codigo = codigo;
 		this.valorUnitario = valorUnitario;
-		this.qtdeEstoque = 0;
+		this.qtdeEstoque = 10;
 	}
 	
 	public String getDescricao() {
@@ -34,7 +34,7 @@ public abstract class Produto {
 		this.descricao = descricao;
 	}
 	
-	public String getCodigo() {
+	public int getCodigo() {
 		return codigo;
 	}
 	
